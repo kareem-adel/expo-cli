@@ -33,6 +33,7 @@ import { printBuildResults, printLogsUrls } from '../utils/misc';
 import AndroidBuilder from './builders/AndroidBuilder';
 import iOSBuilder from './builders/iOSBuilder';
 import { collectMetadata } from './metadata';
+import configureUpdatesAsync from './utils/configureUpdatesAsync';
 
 interface BuildOptions {
   platform: BuildCommandPlatform;
@@ -176,6 +177,24 @@ async function startBuildAsync<T extends Platform>(
         });
         throw error;
       }
+    }
+
+    try {
+      await configureUpdatesAsync({
+        projectDir: builder.ctx.commandCtx.projectDir,
+        nonInteractive: builder.ctx.commandCtx.nonInteractive,
+        platform: builder.ctx.platform,
+      });
+      Analytics.logEvent(
+        AnalyticsEvent.CONFIGURE_EXPO_UPDATES_SUCCESS,
+        builder.ctx.trackingCtx.properties
+      );
+    } catch (error) {
+      Analytics.logEvent(AnalyticsEvent.CONFIGURE_EXPO_UPDATES_FAIL, {
+        ...builder.ctx.trackingCtx,
+        reason: error.message,
+      });
+      throw error;
     }
 
     let archiveUrl;

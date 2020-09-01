@@ -46,6 +46,7 @@
     "@types/clipboardy": "^2.0.1",
     "@types/command-exists": "^1.2.0",
     "@types/dateformat": "^3.0.0",
+    "@types/dedent": "^0.7.0",
     "@types/fs-extra": "^9.0.1",
     "@types/hapi__joi": "^17.1.2",
     "@types/inquirer": "6.0.3",
@@ -74,6 +75,7 @@
     "@expo/spawn-async": "1.5.0",
     "@expo/xdl": "57.9.35",
     "@hapi/joi": "^17.1.1",
+    "@types/xmldom": "^0.1.30",
     "babel-runtime": "6.26.0",
     "base32.js": "0.1.0",
     "boxen": "4.1.0",
@@ -84,6 +86,7 @@
     "commander": "2.17.1",
     "concat-stream": "1.6.2",
     "dateformat": "3.0.3",
+    "dedent": "^0.7.0",
     "delay-async": "1.2.0",
     "env-editor": "^0.4.1",
     "envinfo": "7.5.0",
@@ -118,7 +121,9 @@
     "untildify": "3.0.3",
     "uuid": "^8.0.0",
     "validator": "10.5.0",
-    "wordwrap": "1.0.0"
+    "wordwrap": "1.0.0",
+    "xcode": "^3.0.1",
+    "xmldom": "^0.3.0"
   },
   "optionalDependencies": {
     "@expo/traveling-fastlane-darwin": "1.15.1",

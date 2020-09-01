@@ -75,6 +75,8 @@ export enum AnalyticsEvent {
   GATHER_CREDENTIALS_FAIL = 'builds cli gather credentials fail',
   CONFIGURE_PROJECT_SUCCESS = 'builds cli configure project success',
   CONFIGURE_PROJECT_FAIL = 'builds cli configure project fail',
+  CONFIGURE_EXPO_UPDATES_SUCCESS = 'builds cli configure expo-updates success',
+  CONFIGURE_EXPO_UPDATES_FAIL = 'builds cli configure expo-updates fail',
   BUILD_REQUEST_SUCCESS = 'build cli build request success',
   BUILD_REQUEST_FAIL = 'builds cli build request fail',
 
